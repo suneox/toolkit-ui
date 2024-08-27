@@ -172,6 +172,7 @@ export class AccountStore {
     }
 
     @computed get isPaidUser() {
+        return true;
         // ------------------------------------------------------------------
         // You could set this to true to become a paid user for free.
         // I'd rather you didn't. HTTP Toolkit takes time & love to build,

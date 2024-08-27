@@ -5,7 +5,7 @@ import * as dedent from 'dedent';
 import {
     distanceInWordsStrict, distanceInWordsToNow, format
 } from 'date-fns';
-import { SubscriptionPlans } from '@httptoolkit/accounts';
+import { Subscription, SubscriptionPlans } from '@httptoolkit/accounts';
 
 import { WithInjected } from '../../types';
 import { styled, Theme, ThemeName } from '../../styles';
@@ -142,7 +142,17 @@ class SettingsPage extends React.Component<SettingsPageProps> {
         }
 
         // ! because we know this is set, as we have a paid user
-        const sub = userSubscription!;
+        // const sub = userSubscription!;
+        const sub: Subscription = {
+            status: 'active',
+            plan: 'pro-annual',
+            // quantity: 1,
+            expiry: new Date(),
+            updateBillingDetailsUrl: 'https://example.com',
+            cancelSubscriptionUrl: 'https://example.com',
+            lastReceiptUrl: 'https://example.com',
+            id: 1000
+        }
 
         return <SettingsPageScrollContainer>
             <SettingPageContainer>

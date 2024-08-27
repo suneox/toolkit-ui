@@ -20,6 +20,7 @@ If you want to change the behaviour of the HTTP Toolkit in almost any way, excep
 To get started:
 
 * Clone this repo.
+* `brew install chromium && which chromium`
 * `npm install`
     * On an arm64 Mac, you may see a Puppeteer error saying "The chromium binary is not available for arm64". See https://github.com/puppeteer/puppeteer/issues/6622 for more details. As a quick fix you can run `export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true` and then re-run npm install (you may need to delete node_modules first). In this case, the integration tests won't work but that's rarely important for local development.
 * For pure UI development
